@@ -2,12 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 let items = ["Buy food", "Cook Food", "Eat Food"];
 
-// let items = ["Buy Food", "Cook Food", "Eat Food"];
-
 const app = express();
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 app.get("/", function(req, res) {
     let today = new Date();
@@ -28,7 +27,6 @@ app.post("/", function(req, res) {
     items.push(item);
 
     res.redirect("/");
-
 });
 
 app.listen(3000, function() {
