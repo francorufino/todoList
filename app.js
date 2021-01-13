@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const date = require(__dirname + "date.js");
+const date = require("./date");
 
 const items = ["Buy food", "Cook Food", "Eat Food"];
 //const workItems = [];
@@ -9,7 +9,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use('/static', express.static(__dirname + '/public'));
 
 app.get("/", function(req, res) {
 

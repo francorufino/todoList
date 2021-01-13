@@ -1,4 +1,7 @@
+const date = require("./date")
+
 module.exports.getDate = function() {
+
     const today = new Date();
     const options = {
         weekday: "long",
