@@ -9,7 +9,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/static', express.static(__dirname + '/public'));
+app.use('/static', express.static(__dirname + 'public'));
 
 app.get("/", function(req, res) {
 
